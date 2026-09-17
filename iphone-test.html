@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="朝ストレッチ テスト">
+<meta name="theme-color" content="#FDF6ED">
+
+<title>朝のぎっくり腰予防ストレッチ【iPhone表示テスト版】</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400&display=swap"
+      rel="stylesheet">
+
+<script>
+(function () {
+
+  function buildIcon() {
+
+    var c = document.createElement('canvas');
+
+    c.width = 512;
+    c.height = 512;
+
+    var ctx = c.getContext('2d');
+
+    /* グラデーション背景 */
+    var g = ctx.createLinearGradient(0, 0, 512, 512);
+
+    g.addColorStop(0, '#E8845A');
+    g.addColorStop(1, '#C4956A');
+
+    /* 角丸背景 */
+    var r = 90;
+
+    ctx.beginPath();
+
+    ctx.moveTo(r, 0);
+
+    ctx.lineTo(512 - r, 0);
+
+    ctx.arcTo(
+      512, 0,
+      512, r,
+      r
+    );
+
+    ctx.lineTo(512, 512 - r);
+
+    ctx.arcTo(
+      512, 512,
+      512 - r, 512,
+      r
+    );
+
+    ctx.lineTo(r, 512);
+
+    ctx.arcTo(
+      0, 512,
+      0, 512 - r,
+      r
+    );
+
+    ctx.lineTo(0, r);
+
+    ctx.arcTo(
+      0, 0,
+      r, 0,
+      r
+    );
+
+    ctx.closePath();
+
+    ctx.fillStyle = g;
+    ctx.fill();
+
+    /* 柔らかい光 */
+    var cg = ctx.createRadialGradient(
+      256, 180, 10,
+      256, 180, 230
+    );
+
+    cg.addColorStop(
+      0,
+      'rgba(255,255,255,0.2)'
+    );
+
+    cg.addColorStop(
+      1,
+      'rgba(255,255,255,0)'
+    );
+
+    ctx.fillStyle = cg;
+
+    ctx.beginPath();
+
+    ctx.arc(
+      256,
+      180,
+      230,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fill();
+
+    /* 漢字「伸」 */
+    ctx.fillStyle = 'rgba(255,255,255,0.97)';
+
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    ctx.font =
+      'bold 290px "Hiragino Mincho ProN","YuMincho","Yu Mincho","Noto Serif JP",serif';
+
+    ctx.fillText(
+      '\u4F38',
+      256,
+      272
+    );
+
+    /* iPhone用アイコン */
+    var link = document.createElement('link');
+
+    link.rel = 'apple-touch-icon';
+    link.sizes = '512x512';
+    link.href = c.toDataURL('image/png');
+
+    document.head.appendChild(link);
+
+    /* favicon */
+    var fav = document.createElement('link');
+
+    fav.rel = 'icon';
+    fav.type = 'image/png';
+    fav.href = c.toDataURL('image/png');
+
+    document.head.appendChild(fav);
+  }
+
+  if (document.readyState === 'loading') {
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      buildIcon
+    );
+
+  } else {
+
+    buildIcon();
+
+  }
+
+})();
+</script>
+
+
+<style>
+
+  /* =========================================
+     基本カラー
+     ========================================= */
+
+  :root {
+
+    --cream: #FDF6ED;
+
+    --warm-orange: #E8845A;
+
+    --soft-brown: #8B6347;
+
+    --light-brown: #C4956A;
+
+    --text-dark: #3A2E26;
+
+    --text-mid: #7A6355;
+
+    --bg-card: #FFF9F2;
+
+    --shadow: rgba(139, 99, 71, 0.15);
+
+  }
+
+
+  /* =========================================
+     全体
+     ========================================= */
+
+  * {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+    /*
+      iPhone Safariによる
+      文字サイズの自動拡大を防止
+    */
+
+    -webkit-text-size-adjust: 100%;
+
+  }
+
+
+  html {
+
+    height: 100%;
+
+    overscroll-behavior: none;
+
+  }
+
+
+  body {
+
+    font-family:
+      'Noto Sans JP',
+      sans-serif;
+
+    background-color:
+      var(--cream);
+
+
+    /*
+      iPhoneの
+      ノッチ・Dynamic Island・
+      ホームインジケーター対策
+    */
+
+    padding-top:
+      max(
+        12px,
+        env(safe-area-inset-top)
+      );
+
+    padding-bottom:
+      max(
+        12px,
+        env(safe-area-inset-bottom)
+      );
+
+    padding-left:
+      max(
+        0px,
+        env(safe-area-inset-left)
+      );
+
+    padding-right:
+      max(
+        0px,
+        env(safe-area-inset-right)
+      );
+
+
+    /*
+      画面いっぱいの高さ
+    */
+
+    min-height: 100dvh;
+
+
+    /*
+      画面中央に配置
+    */
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    /*
+      スクロールさせない
+    */
+
+    overflow: hidden;
+
+
+    position: relative;
+
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    -webkit-touch-callout: none;
+
+    user-select: none;
+
+  }
+
+
+  /* =========================================
+     背景の装飾
+     ========================================= */
+
+  body::before {
+
+    content: '';
+
+    position: fixed;
+
+    top: -200px;
+    right: -200px;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(232,132,90,0.12) 0%,
+        transparent 70%
+      );
+
+    pointer-events: none;
+
+  }
+
+
+  body::after {
+
+    content: '';
+
+    position: fixed;
+
+    bottom: -150px;
+    left: -150px;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+      radial-gradient(
+        circle,
+        rgba(196,149,106,0.1) 0%,
+        transparent 70%
+      );
+
+    pointer-events: none;
+
+  }
+
+
+  /* =========================================
+     アプリ全体
+     ========================================= */
+
+  .app-wrapper {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    padding: 0 20px;
+
+  }
+
+
+  /* =========================================
+     ヘッダー
+     ========================================= */
+
+  .app-header {
+
+    text-align: center;
+
+    /*
+      元：28px
+      テスト版：16px
+    */
+
+    margin-bottom: 16px;
+
+    animation:
+      fadeDown 0.6s ease both;
+
+  }
+
+
+  .app-header .label {
+
+    font-size: 11px;
+
+    letter-spacing: 0.25em;
+
+    color:
+      var(--warm-orange);
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+
+    margin-bottom: 6px;
+
+  }
+
+
+  .app-header h1 {
+
+    font-family:
+      'Noto Serif JP',
+      serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color:
+      var(--text-dark);
+
+    letter-spacing: 0.05em;
+
+  }
+
+
+  /* =========================================
+     進捗バー
+     ========================================= */
+
+  .progress-wrap {
+
+    display: flex;
+
+    gap: 6px;
+
+    /*
+      元：24px
+      テスト版：16px
+    */
+
+    margin-bottom: 16px;
+
+    animation:
+      fadeDown 0.6s 0.1s ease both;
+
+    opacity: 0;
+
+  }
+
+
+  .progress-dot {
+
+    flex: 1;
+
+    height: 4px;
+
+    border-radius: 2px;
+
+    background:
+      rgba(139,99,71,0.15);
+
+    transition:
+      background 0.5s ease;
+
+  }
+
+
+  .progress-dot.done {
+
+    background:
+      var(--warm-orange);
+
+  }
+
+
+  .progress-dot.current {
+
+    background:
+      var(--warm-orange);
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+
+  .progress-dot.current::after {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+      rgba(255,255,255,0.4);
+
+    animation:
+      shimmer 1.5s infinite;
+
+  }
+
+
+  @keyframes shimmer {
+
+    to {
+
+      left: 200%;
+
+    }
+
+  }
+
+
+  /* =========================================
+     ストレッチカード
+     ========================================= */
+
+  .card {
+
+    background:
+      var(--bg-card);
+
+    border-radius: 22px;
+
+
+    /*
+      元：32px 28px
+
+      iPhone用に縮小
+    */
+
+    padding: 22px 24px;
+
+
+    box-shadow:
+      0 8px 40px var(--shadow),
+      0 2px 8px rgba(0,0,0,0.04);
+
+
+    animation:
+      fadeUp 0.5s ease both;
+
+    opacity: 0;
+
+
+    /*
+      ここが重要。
+
+      元の
+
+      min-height: 360px;
+
+      を解除して、
+      内容に合わせた高さにする。
+    */
+
+    min-height: 0;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    overflow: hidden;
+
+  }
+
+
+  .card::before {
+
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    background:
+      linear-gradient(
+        90deg,
+        var(--warm-orange),
+        var(--light-brown)
+      );
+
+    border-radius:
+      24px 24px 0 0;
+
+  }
+
+
+  /* =========================================
+     STEP番号
+     ========================================= */
+
+  .step-num {
+
+    font-size: 11px;
+
+    letter-spacing: 0.2em;
+
+    color:
+      var(--light-brown);
+
+    /*
+      元：16px
+      テスト版：10px
+    */
+
+    margin-bottom: 10px;
+
+    font-weight: 300;
+
+  }
+
+
+  /* =========================================
+     ストレッチタイトル
+     ========================================= */
+
+  .stretch-title {
+
+    font-family:
+      'Noto Serif JP',
+      serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    color:
+      var(--text-dark);
+
+    /*
+      元：10px
+      テスト版：7px
+    */
+
+    margin-bottom: 7px;
+
+    letter-spacing: 0.03em;
+
+  }
+
+
+  /* =========================================
+     時間表示
+     ========================================= */
+
+  .stretch-time {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 12px;
+
+    color:
+      var(--warm-orange);
+
+    background:
+      rgba(232,132,90,0.1);
+
+    padding: 4px 12px;
+
+    border-radius: 20px;
+
+    /*
+      元：16px
+      テスト版：10px
+    */
+
+    margin-bottom: 10px;
+
+    font-weight: 400;
+
+  }
+
+
+  /* =========================================
+     説明文
+     ========================================= */
+
+  .stretch-desc {
+
+    font-size: 14px;
+
+    color:
+      var(--text-mid);
+
+    /*
+      元：1.8
+      テスト版：1.65
+    */
+
+    line-height: 1.65;
+
+    font-weight: 300;
+
+    flex: 1;
+
+  }
+
+
+  /* =========================================
+     POINT
+     ========================================= */
+
+  .stretch-point {
+
+    /*
+      元：14px
+      テスト版：10px
+    */
+
+    margin-top: 10px;
+
+    padding: 10px 12px;
+
+    background:
+      rgba(232,132,90,0.08);
+
+    border-left:
+      3px solid var(--warm-orange);
+
+    border-radius:
+      0 8px 8px 0;
+
+    font-size: 12px;
+
+    color:
+      var(--text-mid);
+
+    /*
+      元：1.6
+      テスト版：1.5
+    */
+
+    line-height: 1.5;
+
+  }
+
+
+  .stretch-point strong {
+
+    color:
+      var(--warm-orange);
+
+    font-size: 11px;
+
+    letter-spacing: 0.1em;
+
+    display: block;
+
+    margin-bottom: 2px;
+
+  }
+
+
+  /* =========================================
+     次へボタン
+     ========================================= */
+
+  .btn-wrap {
+
+    /*
+      元：24px
+      テスト版：14px
+    */
+
+    margin-top: 14px;
+
+    animation:
+      fadeUp 0.5s 0.2s ease both;
+
+    opacity: 0;
+
+  }
+
+
+  .btn-next {
+
+    width: 100%;
+
+    /*
+      元：17px
+      テスト版：14px
+    */
+
+    padding: 14px;
+
+    background:
+      var(--warm-orange);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 14px;
+
+    font-family:
+      'Noto Sans JP',
+      sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+
+    /*
+      iPhoneのタップ操作
+    */
+
+    touch-action: manipulation;
+
+    -webkit-appearance: none;
+
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+
+    box-shadow:
+      0 4px 20px
+      rgba(232,132,90,0.35);
+
+    position: relative;
+
+    z-index: 0;
+
+  }
+
+
+  .btn-next:active {
+
+    opacity: 0.82;
+
+    transform:
+      scale(0.98);
+
+  }
+
+
+  /* =========================================
+     完了画面
+     ========================================= */
+
+  .complete-screen {
+
+    text-align: center;
+
+    padding: 20px 0;
+
+  }
+
+
+  .complete-icon {
+
+    font-size: 56px;
+
+    margin-bottom: 20px;
+
+    animation:
+      pop
+      0.5s
+      cubic-bezier(
+        0.175,
+        0.885,
+        0.32,
+        1.275
+      )
+      both;
+
+  }
+
+
+  .complete-title {
+
+    font-family:
+      'Noto Serif JP',
+      serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color:
+      var(--text-dark);
+
+    margin-bottom: 10px;
+
+  }
+
+
+  .complete-sub {
+
+    font-size: 13px;
+
+    color:
+      var(--text-mid);
+
+    line-height: 1.8;
+
+    font-weight: 300;
+
+  }
+
+
+  /* =========================================
+     もう一度はじめる
+     ========================================= */
+
+  .btn-restart {
+
+    margin-top: 28px;
+
+    width: 100%;
+
+    padding: 17px;
+
+    background: transparent;
+
+    color:
+      var(--warm-orange);
+
+    border:
+      2px solid var(--warm-orange);
+
+    border-radius: 14px;
+
+    font-family:
+      'Noto Sans JP',
+      sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    letter-spacing: 0.1em;
+
+    touch-action: manipulation;
+
+    -webkit-appearance: none;
+
+    transition:
+      opacity 0.15s ease,
+      transform 0.15s ease;
+
+  }
+
+
+  .btn-restart:active {
+
+    opacity: 0.75;
+
+    transform:
+      scale(0.98);
+
+  }
+
+
+  /* =========================================
+     ホーム画面追加バナー
+     ========================================= */
+
+  .add-banner {
+
+    /*
+      元：18px
+      テスト版：10px
+    */
+
+    margin-top: 10px;
+
+    padding: 9px 12px;
+
+    background:
+      rgba(232,132,90,0.07);
+
+    border:
+      1px solid
+      rgba(232,132,90,0.22);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    animation:
+      fadeUp 0.5s 0.4s ease both;
+
+    opacity: 0;
+
+  }
+
+
+  .add-banner-icon {
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+
+  }
+
+
+  .add-banner-text {
+
+    font-size: 11px;
+
+    color:
+      var(--text-mid);
+
+    line-height: 1.65;
+
+    font-weight: 300;
+
+  }
+
+
+  .add-banner-text strong {
+
+    color:
+      var(--warm-orange);
+
+    font-weight: 500;
+
+  }
+
+
+  /* ホーム画面から起動した場合は非表示 */
+
+  @media (display-mode: standalone) {
+
+    .add-banner {
+
+      display: none !important;
+
+    }
+
+  }
+
+
+  /* =========================================
+     小さいiPhone用
+     
+     高さ700px以下の場合、
+     さらにコンパクトにする
+     ========================================= */
+
+  @media screen and (max-height: 700px) {
+
+    .app-header {
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .app-header h1 {
+
+      font-size: 20px;
+
+    }
+
+
+    .progress-wrap {
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .card {
+
+      padding: 18px 20px;
+
+    }
+
+
+    .stretch-title {
+
+      font-size: 18px;
+
+    }
+
+
+    .stretch-desc {
+
+      font-size: 13px;
+
+      line-height: 1.55;
+
+    }
+
+
+    .stretch-point {
+
+      font-size: 11px;
+
+      padding: 8px 10px;
+
+      margin-top: 8px;
+
+    }
+
+
+    .btn-wrap {
+
+      margin-top: 10px;
+
+    }
+
+
+    .btn-next {
+
+      padding: 12px;
+
+    }
+
+
+    .add-banner {
+
+      margin-top: 8px;
+
+      padding: 7px 10px;
+
+    }
+
+  }
+
+
+  /* =========================================
+     アニメーション
+     ========================================= */
+
+  @keyframes fadeDown {
+
+    from {
+
+      opacity: 0;
+
+      transform:
+        translateY(-12px);
+
+    }
+
+    to {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+  }
+
+
+  @keyframes fadeUp {
+
+    from {
+
+      opacity: 0;
+
+      transform:
+        translateY(16px);
+
+    }
+
+    to {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+  }
+
+
+  @keyframes pop {
+
+    from {
+
+      transform:
+        scale(0.5);
+
+      opacity: 0;
+
+    }
+
+    to {
+
+      transform:
+        scale(1);
+
+      opacity: 1;
+
+    }
+
+  }
+
+
+  .card-enter {
+
+    animation:
+      fadeUp
+      0.45s
+      ease
+      both;
+
+  }
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="app-wrapper">
+
+
+  <!-- =====================================
+       ヘッダー
+       ===================================== -->
+
+  <div class="app-header">
+
+    <div class="label">
+      Morning Routine
+    </div>
+
+    <h1>
+      朝のぎっくり腰予防
+    </h1>
+
+  </div>
+
+
+  <!-- =====================================
+       進捗バー
+       ===================================== -->
+
+  <div
+    class="progress-wrap"
+    id="progressWrap">
+  </div>
+
+
+  <!-- =====================================
+       メインカード
+       ===================================== -->
+
+  <div
+    class="card"
+    id="mainCard">
+  </div>
+
+
+  <!-- =====================================
+       ボタン
+       ===================================== -->
+
+  <div
+    class="btn-wrap"
+    id="btnWrap">
+  </div>
+
+
+  <!-- =====================================
+       ホーム画面追加案内
+       ===================================== -->
+
+  <div
+    class="add-banner"
+    id="addBanner">
+
+    <span
+      class="add-banner-icon">
+      📲
+    </span>
+
+    <span
+      class="add-banner-text">
+
+      <strong>
+        ホーム画面に追加
+      </strong>
+
+      できます<br>
+
+      下の 共有ボタン（□↑）
+      →「ホーム画面に追加」
+
+    </span>
+
+  </div>
+
+
+</div>
+
+
+<script>
+
+/* =========================================
+   ストレッチデータ
+   ========================================= */
+
+const stretches = [
+
+  {
+
+    emoji: "🦵",
+
+    title:
+      "膝抱えストレッチ",
+
+    time:
+      "左右 各30秒",
+
+    desc:
+      "仰向けに寝て、片膝を両手で抱えながらゆっくりと胸に引き寄せます。腰の筋肉をじっくりほぐしましょう。",
+
+    point:
+      "ぎっくり腰予防のポイント：腰椎まわりの緊張をほぐし、椎間板への負担を減らします。"
+
+  },
+
+
+  {
+
+    emoji: "🌀",
+
+    title:
+      "腰ひねりストレッチ",
+
+    time:
+      "左右 各20秒",
+
+    desc:
+      "仰向けで両膝を立て、膝を揃えたまま左右にゆっくり倒します。呼吸を止めず、深くリラックスして行いましょう。",
+
+    point:
+      "ぎっくり腰予防のポイント：脊柱起立筋と腸腰筋を同時にゆるめ、腰部の柔軟性を保ちます。"
+
+  },
+
+
+  {
+
+    emoji: "🐱",
+
+    title:
+      "キャット＆カウ",
+
+    time:
+      "10回繰り返し",
+
+    desc:
+      "四つ這いの姿勢で、息を吐きながら背中を丸め（猫）、息を吸いながら背中を反らせます（牛）。ゆっくり繰り返しましょう。",
+
+    point:
+      "ぎっくり腰予防のポイント：背骨全体を動かし、腰椎周辺の血流を促進させます。"
+
+  },
+
+
+  {
+
+    emoji: "🏋️",
+
+    title:
+      "股関節屈曲ストレッチ",
+
+    time:
+      "左右 各30秒",
+
+    desc:
+      "片膝立ちの姿勢から、後ろ足の股関節前面を伸ばします。体を少し前傾させ、股関節の付け根を意識してストレッチしましょう。",
+
+    point:
+      "ぎっくり腰予防のポイント：硬い腸腰筋は腰に過剰な負担をかけるため、朝の解消が重要です。"
+
+  },
+
+
+  {
+
+    emoji: "🧘",
+
+    title:
+      "チャイルドポーズ",
+
+    time:
+      "30〜60秒",
+
+    desc:
+      "正座から上体を前に倒し、両手を前に伸ばして額を床につけます。背中全体と腰をゆっくり解放する気持ちで深呼吸しましょう。",
+
+    point:
+      "ぎっくり腰予防のポイント：仙腸関節まわりを広げ、起床時の腰のこわばりをリセットします。"
+
+  }
+
+];
+
+
+/* =========================================
+   現在のステップ
+   ========================================= */
+
+let current = 0;
+
+
+/* =========================================
+   進捗バーを表示
+   ========================================= */
+
+function renderProgress() {
+
+  const wrap =
+    document.getElementById(
+      'progressWrap'
+    );
+
+
+  wrap.innerHTML =
+
+    stretches
+
+      .map(
+        (_, i) => {
+
+          let cls =
+            'progress-dot';
+
+
+          if (i < current) {
+
+            cls += ' done';
+
+          }
+
+
+          if (i === current) {
+
+            cls += ' current';
+
+          }
+
+
+          return `
+            <div
+              class="${cls}">
+            </div>
+          `;
+
+        }
+      )
+
+      .join('');
+
+}
+
+
+/* =========================================
+   ストレッチカードを表示
+   ========================================= */
+
+function renderCard() {
+
+  const card =
+    document.getElementById(
+      'mainCard'
+    );
+
+
+  const btnWrap =
+    document.getElementById(
+      'btnWrap'
+    );
+
+
+  const s =
+    stretches[current];
+
+
+  card.className =
+    'card card-enter';
+
+
+  card.innerHTML = `
+
+    <div>
+
+      <div class="step-num">
+        STEP ${current + 1}
+        / ${stretches.length}
+      </div>
+
+
+      <div
+        style="
+          font-size:60px;
+          text-align:center;
+          line-height:1;
+          margin-bottom:12px
+        "
+      >
+        ${s.emoji}
+      </div>
+
+
+      <div class="stretch-title">
+        ${s.title}
+      </div>
+
+
+      <div class="stretch-time">
+        ⏱ ${s.time}
+      </div>
+
+
+      <div class="stretch-desc">
+        ${s.desc}
+      </div>
+
+
+      <div class="stretch-point">
+
+        <strong>
+          ✦ POINT
+        </strong>
+
+        ${s.point}
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  const isLast =
+    current === stretches.length - 1;
+
+
+  btnWrap.innerHTML = `
+
+    <button
+      class="btn-next"
+      onclick="nextStep()"
+    >
+
+      ${
+        isLast
+          ? '✓ 完了する'
+          : '次へ →'
+      }
+
+    </button>
+
+  `;
+
+}
+
+
+/* =========================================
+   完了画面
+   ========================================= */
+
+function renderComplete() {
+
+  const card =
+    document.getElementById(
+      'mainCard'
+    );
+
+
+  const btnWrap =
+    document.getElementById(
+      'btnWrap'
+    );
+
+
+  const wrap =
+    document.getElementById(
+      'progressWrap'
+    );
+
+
+  /* 全ステップを完了表示 */
+
+  wrap.innerHTML =
+
+    stretches
+
+      .map(
+        () =>
+          `
+          <div
+            class="progress-dot done">
+          </div>
+          `
+      )
+
+      .join('');
+
+
+  card.className =
+    'card card-enter';
+
+
+  card.innerHTML = `
+
+    <div class="complete-screen">
+
+      <div class="complete-icon">
+        🌅
+      </div>
+
+
+      <div class="complete-title">
+        おつかれさまでした！
+      </div>
+
+
+      <div class="complete-sub">
+
+        朝のストレッチが完了しました。<br>
+
+        今日も腰に負担をかけずに<br>
+
+        元気に過ごしましょう。
+
+      </div>
+
+    </div>
+
+  `;
+
+
+  btnWrap.innerHTML = `
+
+    <button
+      class="btn-restart"
+      onclick="restart()"
+    >
+
+      ↺ もう一度はじめる
+
+    </button>
+
+  `;
+
+}
+
+
+/* =========================================
+   次のステップ
+   ========================================= */
+
+function nextStep() {
+
+  if (
+    current <
+    stretches.length - 1
+  ) {
+
+    current++;
+
+    renderProgress();
+
+    renderCard();
+
+  } else {
+
+    renderComplete();
+
+  }
+
+}
+
+
+/* =========================================
+   最初に戻る
+   ========================================= */
+
+function restart() {
+
+  current = 0;
+
+  renderProgress();
+
+  renderCard();
+
+}
+
+
+/* =========================================
+   初期表示
+   ========================================= */
+
+renderProgress();
+
+renderCard();
+
+
+/* =========================================
+   アニメーション開始
+   ========================================= */
+
+setTimeout(
+
+  () => {
+
+    document
+
+      .querySelectorAll(
+        '.progress-wrap, .btn-wrap, #addBanner'
+      )
+
+      .forEach(
+
+        el =>
+          el.style.opacity = '1'
+
+      );
+
+  },
+
+  50
+
+);
+
+</script>
+
+
+</body>
+</html>
